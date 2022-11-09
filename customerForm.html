@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function greetMe(){
+                const nameInput = document.getElementById("name");
+                const yearInput = document.getElementById("year")
+                const resultsDiv = document.getElementById("results");
+                const currentYear = new Date().getFullYear();
+                let ageInput = currentYear - yearInput.value;
+                resultsDiv.innerHTML = `Hello ${nameInput.value}, your age is ${ageInput}`;
+                console.log(currentYear + " " + ageInput);
+                if(ageInput === 21){
+                    console.log("you are 21");
+                }
+                if(ageInput !== 21){
+                    console.log("you are not 21");
+                }
+                if("21" === ageInput){
+                    console.log("they ar the same");
+                }
+                if(ageInput == null){
+                    console.log("age is null");
+                }
+                ageInput += 10;
+                ageInput++
+                console.log("Next year you will be " + ageInput );
+                console.log("A year later you will be  " + ++ageInput );
+                console.log(ageInput);
+
+                const today = new Date();
+                console.log(today);
+                const anotherDate = new Date();
+                console.log(today.toDateString()=== anotherDate.toDateString());
+                console.log(today.toString());
+
+                if(ageInput < 21 && ageInput > 10){
+
+                }
+                if (ageInput < 21 || ageInput > 50){
+
+                }
+
+                const vanessaAge = "21";
+                if(+vanessaAge === 21){
+                    console.log("Vanessa is 21");
+                }
+
+                const pizza = {
+                    base: "thin",
+                    toppings: ["olives", "pineapple"]
+                }
+                pizza.size = '12"';
+                pizza.base = "thick"; // .notitation allows you to ammend a property
+                console.log(pizza);
+
+                const pizza2 = {...pizza, extraHot : true, size : '8"'}; //... is spread opperator 
+                console.log(pizza2);
+
+                const colours = ["red", "green", "blue", "magenta"];
+                for(let i = 0; i < 4; i++){
+                    console.log(colours[i]);
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Javascript Challenge 1</h1>
+        <p>
+            <label for="name">Name</label>
+            <input id="name" type="text">
+        </p>
+        <p>
+            <label for="year">Year of Birth</label>
+            <input id="year" type="number">
+        </p>
+        <p>
+            <button onclick="greetMe()">Greet Me</button>
+        </p>
+        <div id="results"></div>
+
+    </body>
+</html>
